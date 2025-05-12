@@ -168,4 +168,36 @@
   .animate-on-scroll {
     opacity: 0;
   }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    padding: 0.25rem;
+    position: relative;
+  }
+
+  .logo-shield {
+    position: relative;
+    padding: 0.25rem 0.5rem;
+    z-index: 1;
+  }
+
+  @keyframes pulseLight {
+    0% {
+      opacity: 0.5;
+      transform: scale(0.95);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    100% {
+      opacity: 0.5;
+      transform: scale(0.95);
+    }
+  }
+
+  .animate-pulse-light {
+    animation: pulseLight 2s ease-in-out infinite;
+  }
 }
