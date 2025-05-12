@@ -1,77 +1,64 @@
-
-import Icon from '@/components/ui/icon';
-import { motion } from 'framer-motion';
-import { Button } from './ui/button';
+import Icon from "@/components/ui/icon";
+import { Button } from "./ui/button";
 
 const services = [
   {
-    id: 'defense',
-    title: 'Гособоронзаказ',
-    description: 'Специализированные финансовые решения для предприятий, работающих в сфере гособоронзаказа с учетом всех требований законодательства и безопасности.',
-    icon: 'Shield',
-    color: 'text-primary-dark',
+    id: "defense",
+    title: "Гособоронзаказ",
+    description:
+      "Специализированные финансовые решения для предприятий, работающих в сфере гособоронзаказа с учетом всех требований законодательства и безопасности.",
+    icon: "Shield",
+    color: "text-primary-dark",
     items: [
-      'Сопровождение контрактов ГОЗ',
-      'Банковские гарантии',
-      'Целевое финансирование',
-      'Мониторинг и контроль целевых счетов'
-    ]
+      "Сопровождение контрактов ГОЗ",
+      "Банковские гарантии",
+      "Целевое финансирование",
+      "Мониторинг и контроль целевых счетов",
+    ],
   },
   {
-    id: 'business',
-    title: 'Бизнесу',
-    description: 'Комплексное банковское обслуживание для компаний любого масштаба с индивидуальным подходом и льготными условиями.',
-    icon: 'Briefcase',
-    color: 'text-blue-500',
+    id: "business",
+    title: "Бизнесу",
+    description:
+      "Комплексное банковское обслуживание для компаний любого масштаба с индивидуальным подходом и льготными условиями.",
+    icon: "Briefcase",
+    color: "text-blue-500",
     items: [
-      'Расчетно-кассовое обслуживание',
-      'Кредитование бизнеса',
-      'Зарплатные проекты',
-      'Валютный контроль'
-    ]
+      "Расчетно-кассовое обслуживание",
+      "Кредитование бизнеса",
+      "Зарплатные проекты",
+      "Валютный контроль",
+    ],
   },
   {
-    id: 'personal',
-    title: 'Частным лицам',
-    description: 'Выгодные условия обслуживания для физических лиц с широким спектром банковских продуктов и сервисов.',
-    icon: 'User',
-    color: 'text-teal-500',
+    id: "personal",
+    title: "Частным лицам",
+    description:
+      "Выгодные условия обслуживания для физических лиц с широким спектром банковских продуктов и сервисов.",
+    icon: "User",
+    color: "text-teal-500",
     items: [
-      'Вклады с повышенной доходностью',
-      'Потребительские кредиты',
-      'Ипотечные программы',
-      'Дебетовые и кредитные карты'
-    ]
+      "Вклады с повышенной доходностью",
+      "Потребительские кредиты",
+      "Ипотечные программы",
+      "Дебетовые и кредитные карты",
+    ],
   },
   {
-    id: 'investments',
-    title: 'Инвестиции',
-    description: 'Инвестиционные возможности с различными инструментами для сохранения и преумножения капитала.',
-    icon: 'TrendingUp',
-    color: 'text-green-500',
+    id: "investments",
+    title: "Инвестиции",
+    description:
+      "Инвестиционные возможности с различными инструментами для сохранения и преумножения капитала.",
+    icon: "TrendingUp",
+    color: "text-green-500",
     items: [
-      'Инвестиционные счета',
-      'Брокерское обслуживание',
-      'Облигации и акции',
-      'Структурные продукты'
-    ]
-  }
+      "Инвестиционные счета",
+      "Брокерское обслуживание",
+      "Облигации и акции",
+      "Структурные продукты",
+    ],
+  },
 ];
-
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2
-    }
-  }
-};
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 }
-};
 
 const ServicesSection = () => {
   return (
@@ -82,25 +69,22 @@ const ServicesSection = () => {
             Комплексные финансовые решения
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            БЗР Банк предлагает полный спектр банковских услуг, специализируясь на обслуживании государственных оборонных заказов и обеспечивая выгодные условия для всех клиентов.
+            БЗР Банк предлагает полный спектр банковских услуг, специализируясь
+            на обслуживании государственных оборонных заказов и обеспечивая
+            выгодные условия для всех клиентов.
           </p>
         </div>
 
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 animate-fade-in">
           {services.map((service) => (
-            <motion.div 
-              key={service.id} 
-              className="service-card group"
-              variants={item}
-            >
-              <div className={`inline-flex p-3 rounded-lg ${service.id === 'defense' ? 'bg-primary-light/20' : 'bg-blue-100'} mb-5`}>
-                <Icon name={service.icon} className={`h-8 w-8 ${service.color}`} />
+            <div key={service.id} className="service-card group">
+              <div
+                className={`inline-flex p-3 rounded-lg ${service.id === "defense" ? "bg-primary-light/20" : "bg-blue-100"} mb-5`}
+              >
+                <Icon
+                  name={service.icon}
+                  className={`h-8 w-8 ${service.color}`}
+                />
               </div>
               <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
                 {service.title}
@@ -111,28 +95,41 @@ const ServicesSection = () => {
               <ul className="space-y-2 mb-5">
                 {service.items.map((feature, index) => (
                   <li key={index} className="flex items-start text-sm">
-                    <Icon name="CheckCircle" className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                    <Icon
+                      name="CheckCircle"
+                      className="h-4 w-4 text-primary mr-2 mt-0.5"
+                    />
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
-              <Button variant="ghost" className="text-primary hover:text-primary-dark hover:bg-primary-light/10 p-0 mt-2">
+              <Button
+                variant="ghost"
+                className="text-primary hover:text-primary-dark hover:bg-primary-light/10 p-0 mt-2"
+              >
                 <span>Подробнее</span>
                 <Icon name="ArrowRight" className="ml-2 h-4 w-4" />
               </Button>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
-        
+        </div>
+
         {/* Дополнительный информационный блок */}
         <div className="mt-20 bg-white rounded-xl shadow-md overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-3">
             <div className="bg-primary p-8 text-white">
-              <h3 className="text-2xl font-semibold mb-4">Специальное предложение</h3>
+              <h3 className="text-2xl font-semibold mb-4">
+                Специальное предложение
+              </h3>
               <p className="mb-6 opacity-90">
-                Для предприятий оборонно-промышленного комплекса мы предлагаем особые условия обслуживания с учетом специфики работы с гособоронзаказом.
+                Для предприятий оборонно-промышленного комплекса мы предлагаем
+                особые условия обслуживания с учетом специфики работы с
+                гособоронзаказом.
               </p>
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
+              <Button
+                variant="outline"
+                className="border-white text-white hover:bg-white hover:text-primary"
+              >
                 Получить консультацию
               </Button>
             </div>
@@ -145,7 +142,10 @@ const ServicesSection = () => {
                   </div>
                   <div>
                     <h5 className="font-medium mb-1">Государственная защита</h5>
-                    <p className="text-sm text-gray-600">Гарантия сохранности средств и соблюдения государственных интересов</p>
+                    <p className="text-sm text-gray-600">
+                      Гарантия сохранности средств и соблюдения государственных
+                      интересов
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -154,7 +154,9 @@ const ServicesSection = () => {
                   </div>
                   <div>
                     <h5 className="font-medium mb-1">Безопасность данных</h5>
-                    <p className="text-sm text-gray-600">Современные технологии защиты и шифрования информации</p>
+                    <p className="text-sm text-gray-600">
+                      Современные технологии защиты и шифрования информации
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -163,7 +165,10 @@ const ServicesSection = () => {
                   </div>
                   <div>
                     <h5 className="font-medium mb-1">Передовые технологии</h5>
-                    <p className="text-sm text-gray-600">Современные цифровые решения для эффективного управления финансами</p>
+                    <p className="text-sm text-gray-600">
+                      Современные цифровые решения для эффективного управления
+                      финансами
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -172,7 +177,9 @@ const ServicesSection = () => {
                   </div>
                   <div>
                     <h5 className="font-medium mb-1">Персональный подход</h5>
-                    <p className="text-sm text-gray-600">Индивидуальное обслуживание и решения под ваши задачи</p>
+                    <p className="text-sm text-gray-600">
+                      Индивидуальное обслуживание и решения под ваши задачи
+                    </p>
                   </div>
                 </div>
               </div>
